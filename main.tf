@@ -4,6 +4,12 @@ variable "message" {
 
 resource "null_resource" "test" {
   provisioner "local-exec" {
-    command = "echoasdsad  ${var.message}"
+    command = "echo  ${var.message}"
+  }
+}
+
+resource "null_resource" "test2" {
+  provisioner "local-exec" {
+    command = "echo  ${var.message}"
   }
 }
