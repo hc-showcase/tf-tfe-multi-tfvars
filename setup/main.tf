@@ -4,10 +4,6 @@ provider "tfe" {
 resource "tfe_workspace" "dev" {
   name         = "acr-dev"
   organization = "mkaesz-dev"
-vcs_repo     {
-  identifier = "hc-showcase/tf-tfe-multi-tfvars"
-  oauth_token_id = "Github"
-}
 }
 
 resource "tfe_workspace" "prod" {
