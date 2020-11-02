@@ -7,9 +7,3 @@ resource "null_resource" "test" {
     command = "echo  ${var.message}"
   }
 }
-
-resource "null_resource" "test2" {
-  provisioner "local-exec" {
-    command = "echo  ${var.message}"
-  }
-}
