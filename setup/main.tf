@@ -11,14 +11,6 @@ resource "tfe_workspace" "prod" {
   organization = "mkaesz-dev"
 }
 
-resource "tfe_variable" "prod-vars" {
-  key          = "TF_CLI_ARGS_plan"
-  value        = "-var-file=var-files/prod-vars.tfvars"
-  category     = "env"
-  workspace_id = tfe_workspace.prod.id
-  description  = "point to the tfvars file containing all prod vars"
-}
-
 resource "tfe_variable" "dev-vars" {
   key          = "TF_CLI_ARGS_plan"
   value        = "-var-file=var-files/dev-vars.tfvars"
@@ -27,3 +19,10 @@ resource "tfe_variable" "dev-vars" {
   description  = "point to the tfvars file containing all dev vars"
 }
 
+resource "tfe_variable" "prod-vars" {
+  key          = "TF_CLI_ARGS_plan"
+  value        = "-var-file=var-files/prod-vars.tfvars"
+  category     = "env"
+  workspace_id = tfe_workspace.prod.id
+  description  = "point to the tfvars file containing all prod vars"
+}
